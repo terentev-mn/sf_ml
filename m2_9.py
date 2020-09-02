@@ -15,18 +15,21 @@ import matplotlib.pyplot as plt # для построения графиков
 # В качестве ответа укажите модуль разницы этих значений.
 
 vis_data = pd.read_csv("train.csv", encoding = 'ISO-8859-1', low_memory = False)
-## print(vis_data.info()) # находим столбец 'balance_due'
+#print(vis_data.info()) # находим столбец 'balance_due'
 ## берем столбец 'balance_due' (получаем массив)
-##balance = vis_data.balance_due.values
+balance = vis_data.balance_due.values
+
 
 #a = np.log(vis_data.balance_due[vis_data.balance_due > 0]).hist()
 a = np.sqrt(vis_data.balance_due[vis_data.balance_due > 0])
+print(a)
 print('median', np.median(a))
 print('mean', np.mean(a))
 print('ABS', np.abs(np.median(a) - np.mean(a)))
-plt.figure(figsize=(16,6))
-a.hist()
-plt.show()
+
+#plt.figure(figsize=(16,6))
+#a.hist()
+#plt.show()
 
 
 '''
